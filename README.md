@@ -1,6 +1,8 @@
 Capstone Proposal
+
 Kaggle Competition : Zillow Prize: Zillow’s Home Value Prediction (Zestimate)
 Can you improve the algorithm that changed the world of real estate?
+
 Domain Background
 A home is often the largest and most expensive purchase a person makes in his or her lifetime.
 Ensuring homeowners have a trusted way to monitor this asset is incredibly important.
@@ -12,16 +14,20 @@ each property. And, by continually improving the median margin of error (from 14
 onset to 5% today), Zillow has since become established as one of the largest, most trusted
 marketplaces for real estate information in the U.S. and a leading example of impactful
 machine learning.
+
 I am personally interested in this Kaggle challenge as it's a prestigious competition which is
 being participated by people across the world and has a huge prize money of $1,200,000.
 Zillow Prize, a competition with a one million dollar grand prize, is challenging the data science
 community to help push the accuracy of the Zestimate even further. Winning algorithms stand
 to impact the home values of 110M homes across the U.S.
+
 Kaggle Competition Details:
 https://www.kaggle.com/c/zillow-prize-1
+
 Problem Statement
 The problem statement is to build a model to improve the Zestimate residual error by
 engineering new features that give model an edge over the competition.
+
 Datasets and Inputs
 All the real estate transactions in the U.S. are publicly available. We are provided with a full list
 of real estate properties in three counties (Los Angeles, Orange and Ventura, California) data in
@@ -35,6 +41,7 @@ objects, 2 ints and 1 datatime. The target variable is no unbalanced, also we wi
 objects to integers by transforming the data before feeding the same to the model.
 Link to Dataset :
 https://www.kaggle.com/c/zillow-prize-1/data
+
 Solution Statement
 For each property (unique parcelid), we must predict a log error for each time point. As part of
 the competition, The test data logerror values are private, so we cannot calculate the score
@@ -46,6 +53,7 @@ multivariate analysis of the data. Based on analysis of the data, we will remove
 more than 85% of missing data, impute data mean values and h add some features based on
 domain knowledge. We will be using gradient boosting models such as XGBoost or Light
 GBM.
+
 Benchmark Model
 The Benchmark score for my model using RandomForestRegressor is a mean score of
 -0.08274 and a standard average score of 0.00539.
@@ -55,6 +63,7 @@ actual log error. The log error is defined as
 logerror=log(Zestimate)−log(SalePrice)
 and it is recorded in the transactions training data. If a transaction didn't happen for a property
 during that period of time, that row is ignored and not counted in the calculation of MAE.
+
 Project Design
 My project design will be as follows :
 a. Exploratory Analysis of the data. This will include Missing value analysis,
