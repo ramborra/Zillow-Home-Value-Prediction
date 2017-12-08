@@ -4,6 +4,7 @@ Kaggle Competition : Zillow Prize: Zillow’s Home Value Prediction (Zestimate)
 Can you improve the algorithm that changed the world of real estate?
 
 Domain Background
+
 A home is often the largest and most expensive purchase a person makes in his or her lifetime.
 Ensuring homeowners have a trusted way to monitor this asset is incredibly important.
 Zillow’s Zestimate home valuation was created to give consumers as much information as
@@ -25,10 +26,12 @@ Kaggle Competition Details:
 https://www.kaggle.com/c/zillow-prize-1
 
 Problem Statement
+
 The problem statement is to build a model to improve the Zestimate residual error by
 engineering new features that give model an edge over the competition.
 
 Datasets and Inputs
+
 All the real estate transactions in the U.S. are publicly available. We are provided with a full list
 of real estate properties in three counties (Los Angeles, Orange and Ventura, California) data in
 2016. The train data has all the transactions before October 15, 2016, plus some of the
@@ -43,6 +46,7 @@ Link to Dataset :
 https://www.kaggle.com/c/zillow-prize-1/data
 
 Solution Statement
+
 For each property (unique parcelid), we must predict a log error for each time point. As part of
 the competition, The test data logerror values are private, so we cannot calculate the score
 locally. Hence, we will estimate score locally by using cross validation, where the data is sliced
@@ -55,9 +59,12 @@ domain knowledge. We will be using gradient boosting models such as XGBoost or L
 GBM.
 
 Benchmark Model
+
 The Benchmark score for my model using RandomForestRegressor is a mean score of
 -0.08274 and a standard average score of 0.00539.
+
 Evaluation Metrics
+
 Submissions are evaluated on Mean Absolute Error between the predicted log error and the
 actual log error. The log error is defined as
 logerror=log(Zestimate)−log(SalePrice)
@@ -65,6 +72,7 @@ and it is recorded in the transactions training data. If a transaction didn't ha
 during that period of time, that row is ignored and not counted in the calculation of MAE.
 
 Project Design
+
 My project design will be as follows :
 a. Exploratory Analysis of the data. This will include Missing value analysis,
 Correlation analysis, Univariate and Bivariate analysis of the data. Distribution of
